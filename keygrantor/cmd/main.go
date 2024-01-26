@@ -36,15 +36,20 @@ func main() {
 	if !fileExists {
 		if keySrc == nil || len(*keySrc) == 0 {
 			ExtPrivKey = keygrantor.GetRandomExtPrivKey()
+			fmt.Println("got priv key from GetRandomExtPrivKey !!!")
+			fmt.Println(ExtPrivKey.String())
 		} else {
 			var err error
 			ExtPrivKey, err = keygrantor.GetKeyFromKeyGrantor(*keySrc, nil)
 			if err != nil {
 				panic(err)
 			}
+			fmt.Println("got priv key from GetKeyFromKeyGrantor !!!")
+			fmt.Println(ExtPrivKey.String())
 		}
 		keygrantor.SealKeyToFile(KeyFile, ExtPrivKey)
 	}
+	fmt.Println(ExtPrivKey.String())
 	ExtPubKey = ExtPrivKey.PublicKey()
 	listenAddr := *listenAddrP
 	go createAndStartHttpServer(listenAddr)
