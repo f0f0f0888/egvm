@@ -8,7 +8,7 @@
   "securityVersion": 3,
   "mounts": [
     {
-      "source": "/home/azureuser/lming/test/root",
+      "source": "/home/azureuser/lming/test/egvm/keygrantor",
       "target": "/data",
       "type": "hostfs",
       "readOnly": false
