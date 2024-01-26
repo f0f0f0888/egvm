@@ -24,7 +24,7 @@ var (
 	ExtPrivKey *bip32.Key
 	ExtPubKey  *bip32.Key
 
-	KeyFile = "./data/key.txt"
+	KeyFile = "/data/key.txt"
 )
 
 func main() {
